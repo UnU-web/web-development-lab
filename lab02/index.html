@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
+</head>
+<body>
+
+  <!-- Вэбийн толгой хэсэг -->
+  <header>
+    <h1>Оюутны Бүртгэлийн Портал</h1>
+    <p>ШУТИС-ийн Мэдээлэл, холбооны технологийн сургуулийн оюутны бүртгэлийн анкет</p>
+
+    <!-- Навигацийн цэс: хуудас доторх хэсгүүд рүү үсэрнэ -->
+    <nav>
+      <ul>
+        <li><a href="../index.html">Нүүр</a></li>
+        <li><a href="#anket">Анкет бөглөх</a></li>
+        <li><a href="#sonirkhol">Миний сонирхол</a></li>
+        <li><a href="#dun">Миний дүн</a></li>
+        <li><a href="#tuslamj">Тусламж</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Үндсэн контент -->
+  <main>
+
+    <!-- Анкет -->
+    <article>
+      <section id="anket">
+        <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+        <p>Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв бөглөнө үү.</p>
+        <p>Од (*) тэмдэгтэй талбарыг заавал бөглөнө.</p>
+
+        <form action="#" method="POST" enctype="multipart/form-data">
+
+          <!-- 1-р бүлэг: Хувийн мэдээлэл -->
+          <fieldset>
+            <legend>Хувийн мэдээлэл</legend>
+
+            <label for="lastname">Овог: *</label><br>
+            <input type="text" id="lastname" name="lastname" placeholder="Батын" required minlength="2"><br><br>
+
+            <label for="firstname">Нэр: *</label><br>
+            <input type="text" id="firstname" name="firstname" placeholder="Болдбаатар" required minlength="2"><br><br>
+
+            <label for="regnum">Регистрийн дугаар (2 үсэг, 8 тоо): *</label><br>
+            <input type="text" id="regnum" name="regnum" placeholder="ТА05231234" required pattern="[А-ЯЁӨҮа-яёөү]{2}[0-9]{8}"><br><br>
+
+            <label for="dob">Төрсөн огноо: *</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label>Хүйс: *</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Эрэгтэй</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Эмэгтэй</label><br><br>
+
+            <label for="avatar">Профайл зураг:</label><br>
+            <input type="file" id="avatar" name="avatar" accept="image/*"><br>
+          </fieldset>
+          <br>
+
+          <!-- 2-р бүлэг: Нэвтрэх эрхийн мэдээлэл -->
+          <fieldset>
+            <legend>Нэвтрэх эрхийн мэдээлэл</legend>
+
+            <label for="username">Хэрэглэгчийн нэр (4-20 латин үсэг, тоо, _): *</label><br>
+            <input type="text" id="username" name="username" placeholder="boldbaatar_01" required minlength="4" pattern="[A-Za-z0-9_]{4,20}"><br><br>
+
+            <label for="email">Цахим хаяг (Email): *</label><br>
+            <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+
+            <label for="password">Нууц үг (дор хаяж 8 тэмдэгт): *</label><br>
+            <input type="password" id="password" name="password" required minlength="8"><br>
+          </fieldset>
+          <br>
+
+          <!-- 3-р бүлэг: Холбоо барих мэдээлэл -->
+          <fieldset>
+            <legend>Холбоо барих мэдээлэл</legend>
+
+            <label for="phone">Утасны дугаар (8 оронтой): *</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="88112233" required><br><br>
+
+            <label for="city">Хот / аймаг: *</label><br>
+            <select id="city" name="city" required>
+              <option value="">-- Сонгоно уу --</option>
+              <option value="ulaanbaatar">Улаанбаатар</option>
+              <option value="darkhan">Дархан-Уул</option>
+              <option value="orkhon">Орхон</option>
+              <option value="selenge">Сэлэнгэ</option>
+              <option value="tuv">Төв</option>
+              <option value="other">Бусад аймаг</option>
+            </select><br><br>
+
+            <label for="district">Дүүрэг / сум: *</label><br>
+            <input type="text" id="district" name="district" placeholder="Хан-Уул" required minlength="2"><br><br>
+
+            <label for="address">Дэлгэрэнгүй хаяг: *</label><br>
+            <textarea id="address" name="address" rows="3" cols="50" placeholder="Хороо, гудамж, байр, тоот" required minlength="10"></textarea><br><br>
+
+            <label for="emergency">Яаралтай үед холбогдох утас (8 оронтой):</label><br>
+            <input type="tel" id="emergency" name="emergency" pattern="[0-9]{8}" placeholder="99112233"><br>
+          </fieldset>
+          <br>
+
+          <!-- 4-р бүлэг: Боловсролын мэдээлэл -->
+          <fieldset>
+            <legend>Боловсролын мэдээлэл</legend>
+
+            <label for="studentid">Оюутны код (1 латин үсэг, 9 тоо): *</label><br>
+            <input type="text" id="studentid" name="studentid" placeholder="B241234567" required pattern="[A-Za-z][0-9]{9}"><br><br>
+
+            <label for="degree">Суралцаж буй түвшин: *</label><br>
+            <select id="degree" name="degree" required>
+              <option value="">-- Сонгоно уу --</option>
+              <option value="bachelor">Бакалавр</option>
+              <option value="master">Магистр</option>
+              <option value="doctor">Докторант</option>
+            </select><br><br>
+
+            <label for="year">Курс: *</label><br>
+            <select id="year" name="year" required>
+              <option value="">-- Сонгоно уу --</option>
+              <option value="1">1-р курс</option>
+              <option value="2">2-р курс</option>
+              <option value="3">3-р курс</option>
+              <option value="4">4-р курс</option>
+            </select><br><br>
+
+            <label for="major">Мэргэжил / хөтөлбөр: *</label><br>
+            <input type="text" id="major" name="major" placeholder="Мэдээллийн технологи" required minlength="3"><br><br>
+
+            <label>Сургалтын хэлбэр: *</label><br>
+            <input type="radio" id="day" name="studytype" value="day" required>
+            <label for="day">Өдөр</label>
+            <input type="radio" id="evening" name="studytype" value="evening">
+            <label for="evening">Орой</label>
+            <input type="radio" id="online" name="studytype" value="online">
+            <label for="online">Зайн</label><br>
+          </fieldset>
+          <br>
+
+          <!-- 5-р бүлэг: Сонирхол ба ур чадвар -->
+          <fieldset>
+            <legend>Сонирхол ба ур чадвар</legend>
+
+            <label>Сонирхож буй технологиуд:</label><br>
+            <input type="checkbox" id="html" name="skills" value="HTML">
+            <label for="html">HTML5 / CSS3</label><br>
+            <input type="checkbox" id="js" name="skills" value="JavaScript">
+            <label for="js">JavaScript</label><br>
+            <input type="checkbox" id="php" name="skills" value="PHP">
+            <label for="php">PHP &amp; MySQL</label><br>
+            <input type="checkbox" id="python" name="skills" value="Python">
+            <label for="python">Python</label><br>
+            <input type="checkbox" id="git" name="skills" value="Git">
+            <label for="git">Git &amp; GitHub</label><br>
+            <input type="checkbox" id="uiux" name="skills" value="UIUX">
+            <label for="uiux">UI / UX дизайн</label><br><br>
+
+            <label>Гадаад хэлний мэдлэг:</label><br>
+            <input type="checkbox" id="english" name="languages" value="english">
+            <label for="english">Англи</label><br>
+            <input type="checkbox" id="russian" name="languages" value="russian">
+            <label for="russian">Орос</label><br>
+            <input type="checkbox" id="korean" name="languages" value="korean">
+            <label for="korean">Солонгос</label><br>
+            <input type="checkbox" id="chinese" name="languages" value="chinese">
+            <label for="chinese">Хятад</label><br>
+            <input type="checkbox" id="japanese" name="languages" value="japanese">
+            <label for="japanese">Япон</label><br><br>
+
+            <label for="level">Програмчлалын туршлага:</label><br>
+            <select id="level" name="level">
+              <option value="">-- Сонгоно уу --</option>
+              <option value="beginner">Анхан шат (6 сараас бага)</option>
+              <option value="intermediate">Дунд шат (6 сар - 2 жил)</option>
+              <option value="advanced">Ахисан шат (2 жилээс дээш)</option>
+            </select><br><br>
+
+            <label for="bio">Товч танилцуулга / Өөрийн тухай (дор хаяж 20 тэмдэгт):</label><br>
+            <textarea id="bio" name="bio" rows="4" cols="50" minlength="20" placeholder="Өөрийн танилцуулгыг энд бичнэ үү..."></textarea><br>
+          </fieldset>
+          <br>
+
+          <!-- 6-р бүлэг: Баталгаажуулалт -->
+          <fieldset>
+            <legend>Баталгаажуулалт</legend>
+
+            <input type="checkbox" id="agree" name="agree" value="yes" required>
+            <label for="agree">Миний оруулсан мэдээлэл үнэн зөв болохыг баталж байна. *</label><br>
+            <input type="checkbox" id="news" name="news" value="yes">
+            <label for="news">Сургуулийн мэдээ, зарлалыг цахим хаягаараа авахыг зөвшөөрч байна.</label><br>
+          </fieldset>
+          <br>
+
+          <!-- Илгээх ба Арилгах товчлуурууд -->
+          <button type="submit">Анкет илгээх</button>
+          <button type="reset">Дахин эхлүүлэх</button>
+        </form>
+      </section>
+    </article>
+
+    <!-- Сонирхлын жагсаалт -->
+    <section id="sonirkhol">
+      <h2>Миний сонирхол</h2>
+      <p>Чөлөөт цагаараа content хийх дуртай, цаашид гүнзгийрүүлэн судлахыг хүсдэг зүйлс:</p>
+      <ul>
+        <li>Веб хөгжүүлэлт: HTML ашиглан өөрийн вэб хуудсыг бүтээх</li>
+        <li>YouTube контент бүтээх: Roblox тоглоомын видео бичиж, засварлах</li>
+        <li>Тархины судлал: тархи хэрхэн шинэ зүйлд суралцаж, өөрчлөгддөг тухай</li>
+      </ul>
+    </section>
+
+    <!-- Дүнгийн хүснэгт -->
+    <section id="dun">
+      <h2>Миний дүн</h2>
+      <p>Өмнөх улирлын хичээлүүдийн дүн:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Хичээл</th>
+            <th>Кредит</th>
+            <th>Дүн</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Веб зохиомж</td>
+            <td>3</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Мэдээллийн сан</td>
+            <td>3</td>
+            <td>88</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Алгоритм</td>
+            <td>3</td>
+            <td>92</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Нийт 9 кредит, дундаж оноо 91.7.</p>
+    </section>
+
+    <!-- Тусламж -->
+    <section id="tuslamj">
+      <h2>Тусламж</h2>
+      <p>Утасны дугаараа 8 оронтой тоогоор, зай болон зураасгүй бичнэ. Жишээ: 88112233.</p>
+      <p>Регистрийн дугаараа 2 кирилл үсэг, 8 тоогоор бичнэ. Жишээ: ТА05231234.</p>
+      <p>Нууц үг дор хаяж 8 тэмдэгттэй байх ба үсэг, тоог хольж хэрэглэхийг зөвлөж байна.</p>
+      <p>Анкетаа эхнээс нь бөглөх бол "Дахин эхлүүлэх" товчийг дарна.</p>
+    </section>
+
+  </main>
+
+  <!-- Хөл хэсэг -->
+  <footer>
+    <p>Гүйцэтгэсэн: Б. Өнөмөнх (B251870080), ШУТИС-МХТС</p>
+    <p>&copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан.</p>
+    <p><a href="#">Хуудасны эхэнд буцах</a></p>
+  </footer>
+
+</body>
+</html>
