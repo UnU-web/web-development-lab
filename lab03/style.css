@@ -1,0 +1,277 @@
+/* ==============================
+   Лаб 03 — МХТС IT клубын анкет
+   Өнгө: хөх #1f5fa8, ногоон #2e8b57 (Лаб 01-тэй ижил)
+   Фонт: Rubik (гарчиг), Golos Text (үндсэн текст)
+   ============================== */
+
+body {
+  margin: 0;
+  background-color: #e9edf3;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1c2433;
+}
+
+/* ---------- Дээд хэсэг ---------- */
+.site-header {
+  position: relative;          /* badge-ийн байрлалын суурь */
+  background-color: #14213a;
+  color: white;
+  padding: 40px 24px 24px;
+  text-align: center;
+}
+
+.site-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+}
+
+.site-subtitle {
+  margin: 8px 0 24px;
+  color: #c7d3e6;
+}
+
+/* ---------- Цэс ---------- */
+.menu-list {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: 4px;
+}
+
+.menu-link {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 2px solid #1f5fa8;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Pseudo-class: хулганаар дээр нь очиход */
+.menu-link:hover {
+  background-color: #1f5fa8;
+}
+
+/* ---------- Badge (position: relative/absolute жишээ) ---------- */
+.badge {
+  position: absolute;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-header {
+  top: 16px;
+  right: 16px;
+  background-color: #2e8b57;
+  color: white;
+}
+
+.badge-card {
+  top: -12px;
+  right: 24px;
+  background-color: #f2b632;
+  color: #14213a;
+}
+
+/* ---------- Үндсэн хэсэг ба карт ---------- */
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.card {
+  position: relative;          /* badge-card энэ картын буланд байрлана */
+  background-color: white;
+  border-top: 6px solid #1f5fa8;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 32px;
+}
+
+.card-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1f5fa8;
+  margin: 0 0 12px;
+}
+
+.text {
+  margin: 0 0 12px;
+}
+
+/* ---------- Анкет ---------- */
+.form-note {
+  background-color: #eef4fb;
+  border-left: 4px solid #1f5fa8;
+  padding: 10px 14px;
+  margin: 0 0 20px;
+}
+
+.form-group {
+  border: 2px solid #dbe2ec;
+  border-radius: 10px;
+  padding: 8px 20px 12px;
+  margin: 0 0 24px;
+}
+
+.form-legend {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  color: #14213a;
+  padding: 0 8px;
+}
+
+.field {
+  margin: 14px 0;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #d64545;
+}
+
+.field-input {
+  box-sizing: border-box;      /* padding, border-ийг өргөнд оруулж тооцно */
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #cfd6e2;
+  border-radius: 8px;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 15px;
+  background-color: #fafbfd;
+}
+
+/* Pseudo-class: талбарт бичиж эхлэхэд хүрээ нь тодорно */
+.field-input:focus {
+  border-color: #1f5fa8;
+  background-color: white;
+}
+
+.field-textarea {
+  height: 120px;
+}
+
+.field-file {
+  font-size: 14px;
+}
+
+.choice {
+  margin-right: 12px;
+  line-height: 2;
+}
+
+/* ---------- Товчнууд ---------- */
+.form-buttons {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 12px 28px;
+  margin: 6px;
+  border-radius: 8px;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #2e8b57;
+  border: 2px solid #2e8b57;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #246f45;
+  border-color: #246f45;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 2px solid #9aa6bd;
+  color: #5a6478;
+}
+
+.btn-secondary:hover {
+  border-color: #d64545;
+  color: #d64545;
+}
+
+/* ---------- Сонирхол ---------- */
+.interest-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.interest-item {
+  margin-bottom: 8px;
+}
+
+/* ---------- Дүнгийн хүснэгт ---------- */
+.grade-table {
+  width: 100%;
+}
+
+.grade-head {
+  background-color: #1f5fa8;
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.grade-cell {
+  padding: 10px 12px;
+  border-bottom: 1px solid #dbe2ec;
+}
+
+.grade-score {
+  font-weight: 600;
+  color: #2e8b57;
+}
+
+/* ---------- Түгээмэл асуулт ---------- */
+.faq-item {
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 0 0 12px;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: #14213a;
+}
+
+/* ---------- Доод хэсэг ---------- */
+.site-footer {
+  background-color: #14213a;
+  color: #c7d3e6;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.footer-text {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.footer-link {
+  color: #f2b632;
+}

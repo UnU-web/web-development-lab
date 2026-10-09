@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб 03: МХТС IT клубын элсэлтийн анкет</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+  <!-- Гадаад (External) CSS файл -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Хуудасны дээд хэсэг: клубын нэр ба цэс -->
+  <header class="site-header">
+    <span class="badge badge-header">Элсэлт нээлттэй</span>
+    <h1 class="site-title">МХТС IT клуб</h1>
+    <p class="site-subtitle">2026 оны намрын улирлын шинэ гишүүдийн бүртгэл</p>
+
+    <nav class="menu">
+      <ul class="menu-list">
+        <li class="menu-item"><a class="menu-link" href="../index.html">Лаб 01</a></li>
+        <li class="menu-item"><a class="menu-link" href="../lab02/index.html">Лаб 02</a></li>
+        <li class="menu-item"><a class="menu-link" href="#klub">Клубын тухай</a></li>
+        <li class="menu-item"><a class="menu-link" href="#elsekh">Элсэх анкет</a></li>
+        <li class="menu-item"><a class="menu-link" href="#sonirkhol">Миний сонирхол</a></li>
+        <li class="menu-item"><a class="menu-link" href="#dun">Миний дүн</a></li>
+        <li class="menu-item"><a class="menu-link" href="#asuult">Түгээмэл асуулт</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <!-- Клубын товч танилцуулга -->
+    <section id="klub" class="card">
+      <span class="badge badge-card">Үнэгүй</span>
+      <h2 class="card-title">Клубын тухай</h2>
+      <p class="text">МХТС IT клуб нь програмчлал, дизайн, кибер аюулгүй байдлыг сонирхдог оюутнуудыг нэгтгэдэг. Гишүүд долоо хоног бүр уулзаж, багаараа бодит төсөл хийж, хакатонд хамтдаа оролцдог.</p>
+      <p class="text">Элсэхэд өмнөх туршлага шаардлагагүй, суралцах хүсэл байхад хангалттай.</p>
+    </section>
+
+    <!-- Элсэлтийн анкет -->
+    <article>
+      <section id="elsekh" class="card">
+        <span class="badge badge-card">≈ 5 минут</span>
+        <h2 class="card-title">Элсэх анкет</h2>
+        <p class="form-note">Анкетыг бөглөхөд 5 орчим минут шаардагдана. Од (<span class="required">*</span>) бүхий талбарыг заавал бөглөнө.</p>
+
+        <form class="form" action="#" method="post" enctype="multipart/form-data">
+
+          <!-- Анкет бөглөгчийн үндсэн мэдээлэл -->
+          <fieldset class="form-group">
+            <legend class="form-legend">Таны тухай</legend>
+
+            <p class="field">
+              <label class="field-label" for="ovog">Овог <span class="required">*</span></label>
+              <input class="field-input" type="text" id="ovog" name="ovog" placeholder="Дорж" required minlength="2">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="ner">Нэр <span class="required">*</span></label>
+              <input class="field-input" type="text" id="ner" name="ner" placeholder="Сарнай" required minlength="2">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="oyutny-kod">Оюутны код (жишээ нь B241234567) <span class="required">*</span></label>
+              <input class="field-input" type="text" id="oyutny-kod" name="oyutny-kod" placeholder="B241234567" required pattern="[A-Za-z][0-9]{9}">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="tursun-udur">Төрсөн өдөр <span class="required">*</span></label>
+              <input class="field-input" type="date" id="tursun-udur" name="tursun-udur" required>
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="zurag">Нүүр зураг (заавал биш)</label>
+              <input class="field-file" type="file" id="zurag" name="zurag" accept="image/*">
+            </p>
+          </fieldset>
+
+          <!-- Холбоо барих болон клубын сайтад нэвтрэх мэдээлэл -->
+          <fieldset class="form-group">
+            <legend class="form-legend">Холбоо барих ба нэвтрэх</legend>
+
+            <p class="field">
+              <label class="field-label" for="imeil">Цахим шуудан <span class="required">*</span></label>
+              <input class="field-input" type="email" id="imeil" name="imeil" placeholder="tanii.ner@gmail.com" required>
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="utas">Гар утас (8 оронтой тоо) <span class="required">*</span></label>
+              <input class="field-input" type="tel" id="utas" name="utas" placeholder="99001122" required pattern="[0-9]{8}">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="github">GitHub хэрэглэгчийн нэр (байвал)</label>
+              <input class="field-input" type="text" id="github" name="github" placeholder="sarnai-dev" pattern="[A-Za-z0-9\-]{1,39}">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="nuuts-ug">Клубын сайтад нэвтрэх нууц үг (8-аас дээш тэмдэгт) <span class="required">*</span></label>
+              <input class="field-input" type="password" id="nuuts-ug" name="nuuts-ug" required minlength="8">
+            </p>
+          </fieldset>
+
+          <!-- Клубт хэрхэн оролцох тухай -->
+          <fieldset class="form-group">
+            <legend class="form-legend">Клубын оролцоо</legend>
+
+            <p class="field">
+              <label class="field-label" for="kurs">Хэддүгээр курс вэ? <span class="required">*</span></label>
+              <select class="field-input" id="kurs" name="kurs" required>
+                <option value="">Курсээ сонгоно уу</option>
+                <option value="1">1-р курс</option>
+                <option value="2">2-р курс</option>
+                <option value="3">3-р курс</option>
+                <option value="4">4-р курс</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="bag">Аль багт орох вэ? <span class="required">*</span></label>
+              <select class="field-input" id="bag" name="bag" required>
+                <option value="">Багаа сонгоно уу</option>
+                <option value="web">Веб хөгжүүлэлтийн баг</option>
+                <option value="game">Тоглоом хөгжүүлэлтийн баг</option>
+                <option value="security">Кибер аюулгүй байдлын баг</option>
+                <option value="media">Дизайн ба медиа баг</option>
+              </select>
+            </p>
+
+            <p class="field">
+              <span class="field-label">Програмчлалын туршлага <span class="required">*</span></span>
+              <input type="radio" id="ankhan" name="turshlaga" value="ankhan" required>
+              <label class="choice" for="ankhan">Дөнгөж эхэлж байгаа</label><br>
+              <input type="radio" id="dund" name="turshlaga" value="dund">
+              <label class="choice" for="dund">Жижиг төсөл хийж үзсэн</label><br>
+              <input type="radio" id="ahisan" name="turshlaga" value="ahisan">
+              <label class="choice" for="ahisan">Бие даан бүтэн төсөл хийсэн</label>
+            </p>
+
+            <p class="field">
+              <span class="field-label">Уулзалтад тохиромжтой цаг <span class="required">*</span></span>
+              <input type="radio" id="udur" name="tsag" value="udur" required>
+              <label class="choice" for="udur">Өдрийн цайны цагаар (12:00-14:00)</label><br>
+              <input type="radio" id="oroi" name="tsag" value="oroi">
+              <label class="choice" for="oroi">Хичээлийн дараа (18:00-20:00)</label>
+            </p>
+
+            <p class="field">
+              <span class="field-label">Чөлөөтэй гаригууд</span>
+              <input type="checkbox" id="davaa" name="garig" value="davaa">
+              <label class="choice" for="davaa">Даваа</label>
+              <input type="checkbox" id="myagmar" name="garig" value="myagmar">
+              <label class="choice" for="myagmar">Мягмар</label>
+              <input type="checkbox" id="lkhagva" name="garig" value="lkhagva">
+              <label class="choice" for="lkhagva">Лхагва</label>
+              <input type="checkbox" id="purev" name="garig" value="purev">
+              <label class="choice" for="purev">Пүрэв</label>
+              <input type="checkbox" id="baasan" name="garig" value="baasan">
+              <label class="choice" for="baasan">Баасан</label>
+              <input type="checkbox" id="byamba" name="garig" value="byamba">
+              <label class="choice" for="byamba">Бямба</label>
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="portfolio">Өмнө хийсэн ажлын жишээ (PDF эсвэл зураг, заавал биш)</label>
+              <input class="field-file" type="file" id="portfolio" name="portfolio" accept=".pdf,image/*">
+            </p>
+
+            <p class="field">
+              <label class="field-label" for="shaltgaan">Яагаад клубт элсэхийг хүсэж байна вэ? (30-аас дээш тэмдэгт) <span class="required">*</span></label>
+              <textarea class="field-input field-textarea" id="shaltgaan" name="shaltgaan" rows="5" placeholder="Клубээс юу сурах, ямар төсөл хийхийг хүсэж байгаагаа бичнэ үү" required minlength="30"></textarea>
+            </p>
+          </fieldset>
+
+          <!-- Илгээхээс өмнөх баталгаа -->
+          <fieldset class="form-group">
+            <legend class="form-legend">Баталгаа</legend>
+
+            <p class="field">
+              <input type="checkbox" id="oroltsoo" name="oroltsoo" value="tiim" required>
+              <label class="choice" for="oroltsoo">Долоо хоногт дор хаяж нэг уулзалтад оролцоно. <span class="required">*</span></label><br>
+              <input type="checkbox" id="medee" name="medee" value="tiim">
+              <label class="choice" for="medee">Клубын мэдээ, арга хэмжээний зарлалыг имэйлээр авна.</label>
+            </p>
+          </fieldset>
+
+          <p class="form-buttons">
+            <button class="btn btn-primary" type="submit">Бүртгүүлэх</button>
+            <button class="btn btn-secondary" type="reset">Анкетыг цэвэрлэх</button>
+          </p>
+        </form>
+      </section>
+    </article>
+
+    <!-- Анкет бэлтгэсэн оюутны сонирхол -->
+    <section id="sonirkhol" class="card">
+      <h2 class="card-title">Миний сонирхол</h2>
+      <p class="text">Энэ хуудсыг бэлтгэсэн оюутны чөлөөт цагаараа хийдэг зүйлс:</p>
+      <ul class="interest-list">
+        <li class="interest-item">Roblox тоглоомын YouTube видео бүтээж, засварлах</li>
+        <li class="interest-item">Тархи хэрхэн шинэ зүйлд суралцдаг тухай ном унших</li>
+        <li class="interest-item">Linux систем, сервер тохируулж туршиж үзэх</li>
+      </ul>
+    </section>
+
+    <!-- Өмнөх улирлын дүн -->
+    <section id="dun" class="card">
+      <h2 class="card-title">Миний дүн</h2>
+      <p class="text">2025-2026 оны хичээлийн жилийн хаврын улирлын дүн:</p>
+      <table class="grade-table">
+        <thead>
+          <tr>
+            <th class="grade-head">Хичээл</th>
+            <th class="grade-head">Кредит</th>
+            <th class="grade-head">Оноо</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="grade-cell">Програмчлалын үндэс</td>
+            <td class="grade-cell">3</td>
+            <td class="grade-cell grade-score">100</td>
+          </tr>
+          <tr>
+            <td class="grade-cell">Инженерчлэлийн эдийн засаг</td>
+            <td class="grade-cell">3</td>
+            <td class="grade-cell grade-score">91</td>
+          </tr>
+          <tr>
+            <td class="grade-cell">Монголын түүх</td>
+            <td class="grade-cell">2</td>
+            <td class="grade-cell grade-score">100</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Элсэгчдийн байнга асуудаг асуултууд -->
+    <section id="asuult" class="card">
+      <h2 class="card-title">Түгээмэл асуулт</h2>
+      <p class="faq-item"><span class="faq-question">Асуулт: Клубт элсэхэд төлбөр бий юу?</span><br>
+      Хариулт: Үгүй, гишүүнчлэл үнэгүй.</p>
+      <p class="faq-item"><span class="faq-question">Асуулт: Нэгээс олон багт орж болох уу?</span><br>
+      Хариулт: Эхний улиралд нэг баг сонгоно. Дараагийн улиралд баг сольж болно.</p>
+      <p class="faq-item"><span class="faq-question">Асуулт: Анкет илгээсний дараа юу болох вэ?</span><br>
+      Хариулт: Анхны уулзалтын цаг, байршлыг таны цахим шуудан руу илгээнэ.</p>
+    </section>
+
+  </main>
+
+  <!-- Хуудасны доод хэсэг -->
+  <footer class="site-footer">
+    <p class="footer-text">Бэлтгэсэн: Б. Өнөмөнх (B251870080), ШУТИС-МХТС</p>
+    <p class="footer-text">Веб зохиомж хичээлийн лаборатори 03, &copy; 2026</p>
+    <p class="footer-text"><a class="footer-link" href="#">Хуудасны эхэнд очих</a></p>
+  </footer>
+
+</body>
+</html>
