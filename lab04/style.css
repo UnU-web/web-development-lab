@@ -1,0 +1,420 @@
+/* ==============================
+   Лаб 04 — МХТС IT клуб
+   Flexbox: header, nav, footer, товчнууд, карт доторх бүтэц
+   Grid: үндсэн хэсэг + sidebar, 3 баганатай карт, анкетын 2 багана
+   Өнгө: хөх #1f5fa8, ногоон #2e8b57, шар #f2b632
+   Фонт: Rubik (гарчиг), Golos Text (үндсэн текст)
+   ============================== */
+
+body {
+  margin: 0;
+  background-color: #e9edf3;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1c2433;
+}
+
+/* ===== HEADER — Flexbox ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;   /* гарчиг зүүн, статус баруун */
+  align-items: center;
+  gap: 16px;
+  background-color: #14213a;
+  color: white;
+  padding: 28px 40px;
+}
+
+.site-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  margin: 0;
+}
+
+.site-subtitle {
+  margin: 4px 0 0;
+  color: #c7d3e6;
+}
+
+.status {
+  background-color: #2e8b57;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ===== NAVIGATION — Flexbox ===== */
+.menu {
+  display: flex;
+  justify-content: space-between;   /* хэсгийн холбоос зүүн, лабын холбоос баруун */
+  align-items: center;
+  background-color: #1f5fa8;
+  padding: 10px 40px;
+}
+
+.menu-list {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-link {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  background-color: #14213a;
+}
+
+.menu-link-lab {
+  border: 2px solid #8fb2e3;
+  font-size: 14px;
+}
+
+/* ===== ҮНДСЭН LAYOUT — Grid (агуулга + sidebar) ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;   /* зүүн: агуулга, баруун: sidebar */
+  gap: 28px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* main доторх хэсгүүдийн хоорондын зай */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===== Карт (Лаб 03-аас) ===== */
+.card {
+  position: relative;
+  background-color: white;
+  border-top: 6px solid #1f5fa8;
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.card-title,
+.section-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1f5fa8;
+  margin: 0 0 12px;
+}
+
+.text {
+  margin: 0 0 12px;
+}
+
+/* position: relative/absolute — badge (Лаб 03) */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: #f2b632;
+  color: #14213a;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ===== Үйл ажиллагааны картууд — Grid 3 багана ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.mini-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;   /* tag бүтэн өргөнөөр сунахгүй */
+  gap: 8px;
+  background-color: white;
+  border: 2px solid #dbe2ec;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.mini-card:hover {
+  border-color: #1f5fa8;
+}
+
+.mini-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.mini-text {
+  margin: 0;
+  color: #5a6478;
+  font-size: 15px;
+}
+
+.tag {
+  margin-top: auto;          /* tag-ийг картын доод хэсэгт түлхэнэ */
+  background-color: #eef4fb;
+  color: #1f5fa8;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tag-event {
+  background-color: #fdf3dc;
+  color: #9a6b00;
+}
+
+/* ===== Анкет ===== */
+.form-note {
+  background-color: #eef4fb;
+  border-left: 4px solid #1f5fa8;
+  padding: 10px 14px;
+  margin: 0 0 20px;
+}
+
+.form-group {
+  border: 2px solid #dbe2ec;
+  border-radius: 10px;
+  padding: 8px 20px 12px;
+  margin: 0 0 24px;
+}
+
+/* Grid: эхний хоёр хэсгийн талбарууд 2 баганаар */
+.form-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.form-legend {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  color: #14213a;
+  padding: 0 8px;
+}
+
+.field {
+  margin: 14px 0;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #d64545;
+}
+
+.field-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #cfd6e2;
+  border-radius: 8px;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 15px;
+  background-color: #fafbfd;
+}
+
+.field-input:focus {
+  border-color: #1f5fa8;
+  background-color: white;
+}
+
+.field-textarea {
+  height: 120px;
+}
+
+.field-file {
+  font-size: 14px;
+}
+
+.choice {
+  margin-right: 12px;
+  line-height: 2;
+}
+
+/* Товчнууд — Flexbox */
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px 0 0;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-family: "Golos Text", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #2e8b57;
+  border: 2px solid #2e8b57;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #246f45;
+  border-color: #246f45;
+}
+
+.btn-secondary {
+  background-color: white;
+  border: 2px solid #9aa6bd;
+  color: #5a6478;
+}
+
+.btn-secondary:hover {
+  border-color: #d64545;
+  color: #d64545;
+}
+
+/* ===== Түгээмэл асуулт ===== */
+.faq-item {
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 0 0 12px;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: #14213a;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-box {
+  background-color: white;
+  border-radius: 10px;
+  border-left: 5px solid #2e8b57;
+  padding: 18px 20px;
+}
+
+.side-title {
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.side-note {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #7a8496;
+}
+
+/* Товч мэдээлэл: нэр зүүн, утга баруун — Flexbox */
+.info-list {
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e3e8ef;
+}
+
+.info-row b {
+  color: #1f5fa8;
+}
+
+.side-button {
+  display: block;
+  text-align: center;
+  background-color: #2e8b57;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.side-button:hover {
+  background-color: #246f45;
+}
+
+.interest-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.interest-item {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* Дүнгийн хүснэгт */
+.grade-table {
+  width: 100%;
+  font-size: 14px;
+}
+
+.grade-head {
+  background-color: #1f5fa8;
+  color: white;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.grade-cell {
+  padding: 6px 8px;
+  border-bottom: 1px solid #dbe2ec;
+}
+
+.grade-score {
+  font-weight: 600;
+  color: #2e8b57;
+}
+
+/* ===== FOOTER — Flexbox ===== */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background-color: #14213a;
+  color: #c7d3e6;
+  padding: 20px 40px;
+}
+
+.footer-text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-link {
+  color: #f2b632;
+  font-size: 14px;
+}
