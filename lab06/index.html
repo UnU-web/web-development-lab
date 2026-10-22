@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб 06: МХТС IT клуб — Зургийн цомог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&family=Rubik:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Ачаалах loader (CSS animation-аар өөрөө алга болно) -->
+  <div class="loader" role="status">
+    <span class="spinner"></span>
+    <p>Ачаалж байна...</p>
+  </div>
+
+  <header class="site-header">
+    <div class="brand">
+      <!-- Inline SVG лого -->
+      <svg class="logo" viewBox="0 0 48 48" role="img" aria-labelledby="logo-title">
+        <title id="logo-title">МХТС IT клубын лого</title>
+        <rect width="48" height="48" rx="10" class="logo-bg"/>
+        <path d="M13 31 L24 13 L35 31 Z" class="logo-shape"/>
+        <circle cx="24" cy="31" r="5" class="logo-dot"/>
+      </svg>
+      <div>
+        <h1 class="site-title">МХТС IT клуб</h1>
+        <p class="site-subtitle">Зургийн цомог</p>
+      </div>
+    </div>
+    <button class="theme-btn" id="theme-btn" type="button" aria-pressed="false">Харанхуй горим</button>
+  </header>
+
+  <nav class="menu" aria-label="Үндсэн цэс">
+    <a class="menu-link" href="#gallery">Цомог</a>
+    <a class="menu-link" href="#video">Видео</a>
+    <a class="menu-link" href="#gazar">Газрын зураг</a>
+  </nav>
+
+  <main class="layout">
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery">
+      <h2 class="section-title">Клубын зургийн цомог</h2>
+      <p class="hint">Картыг товшиж "Мэдээлэл харах" товчоор эргүүлээрэй.</p>
+
+      <div class="gallery">
+
+        <article class="card" style="--i: 0">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo1.jpg" alt="Клубын нээлтийн уулзалтад цугласан оюутнууд" width="800" height="600" loading="lazy">
+                <figcaption>Нээлтийн уулзалт</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>Нээлтийн уулзалт</h3>
+                <dl><dt>Огноо</dt><dd>2026-09-08</dd><dt>Газар</dt><dd>ШУТИС-МХТС</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+        <article class="card" style="--i: 1">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo2.jpg" alt="Веб хөгжүүлэлтийн багийн хичээл" width="800" height="600" loading="lazy">
+                <figcaption>Веб хөгжүүлэлт</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>Веб хөгжүүлэлт</h3>
+                <dl><dt>Огноо</dt><dd>2026-09-15</dd><dt>Газар</dt><dd>Лабораторийн өрөө</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+        <article class="card" style="--i: 2">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo3.jpg" alt="Хакатонд төсөл бүтээж буй баг" width="800" height="600" loading="lazy">
+                <figcaption>Хакатон</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>Хакатон</h3>
+                <dl><dt>Огноо</dt><dd>2026-09-27</dd><dt>Газар</dt><dd>ШУТИС-МХТС, Лекцийн том танхим</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+        <article class="card" style="--i: 3">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo4.jpg" alt="CTF тэмцээнд бэлтгэж буй гишүүд" width="800" height="600" loading="lazy">
+                <figcaption>CTF бэлтгэл</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>CTF бэлтгэл</h3>
+                <dl><dt>Огноо</dt><dd>2026-10-03</dd><dt>Газар</dt><dd>Сүлжээний лаборатори</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+        <article class="card" style="--i: 4">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo5.jpg" alt="Дизайн ба медиа багийн постер бэлтгэл" width="800" height="600" loading="lazy">
+                <figcaption>Дизайн ба медиа</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>Дизайн ба медиа</h3>
+                <dl><dt>Огноо</dt><dd>2026-10-10</dd><dt>Газар</dt><dd> Медианы лаборатори</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+        <article class="card" style="--i: 5">
+          <div class="flip">
+            <div class="flip-inner">
+              <figure class="face front">
+                <img src="img/photo6.jpg" alt="Долоо хоногийн семинарт илтгэл тавьж буй гишүүн" width="800" height="600" loading="lazy">
+                <figcaption>Семинар</figcaption>
+              </figure>
+              <div class="face back">
+                <h3>Долоо хоногийн семинар</h3>
+                <dl><dt>Огноо</dt><dd>2026-10-17</dd><dt>Газар</dt><dd>ШУТИС-МХТС, 2-р давхарт</dd></dl>
+              </div>
+            </div>
+          </div>
+          <button class="flip-btn" type="button" aria-pressed="false">Мэдээлэл харах</button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== VIDEO ===== -->
+    <section id="video" class="panel">
+      <h2 class="section-title">Клубын богино видео</h2>
+      <video class="media" controls preload="metadata" poster="img/photo1.jpg" width="640" height="480">
+        <source src="video/clip.webm" type="video/webm">
+        <source src="video/clip.mp4" type="video/mp4">
+        <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+        <p>Таны хөтөч видеог дэмжихгүй байна. <a href="video/clip.mp4">Видеог татаж авах</a></p>
+      </video>
+    </section>
+
+    <!-- ===== IFRAME: газрын зураг ===== -->
+    <section id="gazar" class="panel">
+      <h2 class="section-title">Уулзалтын байршил</h2>
+      <iframe class="media map"
+        title="Клубын уулзалтын байршил: ШУТИС-МХТС"
+        src="https://www.openstreetmap.org/export/embed?bbox=106.95299863815308%2C47.916169464838134%2C106.98042154312135%2C47.925415815004115&amp;layer=mapnik&amp;marker=47.92079928549916%2C106.9667100906372"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        sandbox="allow-scripts allow-same-origin"></iframe>
+    </section>  
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-text">Бэлтгэсэн: Б. Өнөмөнх (B251870080), ШУТИС-МХТС</p>
+    <p class="footer-text">Веб зохиомж — лаборатори 06, &copy; 2026</p>
+    <a class="footer-link" href="#">Эхэнд очих ↑</a>
+  </footer>
+
+</body>
+</html>
