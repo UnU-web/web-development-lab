@@ -1,0 +1,47 @@
+// ===== Design token-ууд (map) =====
+$colors: (
+  bg: #e9edf3,
+  surface: #ffffff,
+  text: #1c2433,
+  muted: #5a6478,
+  primary: #1f5fa8,
+  accent: #f2b632,
+  dark: #14213a,
+  green: #2e8b57,
+);
+
+// Dark mode-д зөвхөн эдгээр өнгө солигдоно
+$colors-dark: (
+  bg: #0f1626,
+  surface: #1b2640,
+  text: #e6ecf7,
+  muted: #a9b6cc,
+  primary: #6aa5ee,
+);
+
+$breakpoints: (
+  tablet: 991px,
+  mobile: 599px,
+);
+
+$spacing: (
+  1: 8px,
+  2: 16px,
+  3: 24px,
+  4: 40px,
+);
+
+$radius: 12px;
+$time-fast: 0.25s;
+$time-flip: 0.7s;
+$stagger: 120ms;
+
+$shadow: 0 4px 12px rgba(20, 33, 58, 0.15);
+$shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.5);
+$shadow-hover: 0 12px 24px rgba(20, 33, 58, 0.3);
+
+$font-body: "Golos Text", Arial, sans-serif;
+$font-heading: "Rubik", sans-serif;
+
+$muted-light: #c7d3e6;
+$loader-track: #3b4a6b;

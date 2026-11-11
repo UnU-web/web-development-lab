@@ -1,0 +1,14 @@
+{
+  "name": "web-development-lab-lab07",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Лаб 07: Sass/SCSS refactoring",
+  "scripts": {
+    "build": "sass --style=compressed --no-source-map scss/main.scss css/style.min.css",
+    "build:dev": "sass --style=expanded scss/main.scss css/style.css",
+    "watch": "sass --watch --style=expanded scss/main.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "1.77.8"
+  }
+}

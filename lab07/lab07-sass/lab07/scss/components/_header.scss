@@ -1,0 +1,73 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.header {
+  @include flex-center($justify: space-between, $gap: 16px);
+  background-color: var(--color-dark);
+  color: contrast(color-of(dark));
+  padding: 20px 40px;
+
+  @include respond(tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include respond(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+  }
+
+  &__brand {
+    @include flex-center($justify: flex-start, $gap: 14px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: rem(28px);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $muted-light;
+  }
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+
+  &__bg {
+    fill: var(--color-primary);
+  }
+
+  &__shape {
+    fill: var(--color-accent);
+  }
+
+  &__dot {
+    fill: var(--color-dark);
+  }
+}
+
+.theme-toggle {
+  padding: 8px 16px;
+  border: 2px solid var(--color-accent);
+  border-radius: 20px;
+  background-color: transparent;
+  color: contrast(color-of(dark));
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--time-fast), color var(--time-fast);
+
+  &:hover,
+  &[aria-pressed="true"] {
+    background-color: var(--color-accent);
+    color: contrast(color-of(accent));
+  }
+}

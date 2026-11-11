@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "sass:color";
+@use "sass:map";
+@use "tokens" as *;
+
+// px -> rem: rem(26px) => 1.625rem
+@function rem($px, $base: 16px) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// token map-аас өнгө авах
+@function color-of($name) {
+  @return map.get($colors, $name);
+}
+
+// Дэвсгэр өнгөнд тааруулж цагаан эсвэл хар текст сонгоно
+@function contrast($bg, $light: #ffffff, $dark: map.get($colors, dark)) {
+  @return if(color.lightness($bg) > 50%, $dark, $light);
+}

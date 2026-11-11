@@ -1,0 +1,25 @@
+@use "../abstracts/mixins" as *;
+
+.gallery {
+  &__title {
+    @include section-title;
+  }
+
+  &__hint {
+    @include section-hint;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use "../abstracts/tokens" as *;
+
+// @each-ээр utility класс үүсгэнэ (u-text-primary, u-bg-dark, u-mt-2 ...)
+@each $name, $value in $colors {
+  .u-text-#{$name} {
+    color: var(--color-#{$name});
+  }
+
+  .u-bg-#{$name} {
+    background-color: var(--color-#{$name});
+  }
+}
+
+@each $step, $size in $spacing {
+  .u-mt-#{$step} {
+    margin-top: $size;
+  }
+
+  .u-mb-#{$step} {
+    margin-bottom: $size;
+  }
+}

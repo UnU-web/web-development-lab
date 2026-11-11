@@ -1,0 +1,13 @@
+// Лаб 07: Лаб 06-ийн CSS-ийг SCSS болгон дахин зохион байгуулав (refactoring)
+@use "base/root";
+@use "base/base";
+@use "components/loader";
+@use "components/header";
+@use "components/nav";
+@use "components/layout";
+@use "components/gallery";
+@use "components/card";
+@use "components/panel";
+@use "components/footer";
+@use "utilities/utilities";
+@use "base/motion";

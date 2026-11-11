@@ -1,0 +1,38 @@
+@use "../abstracts/mixins" as *;
+
+.panel {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+
+  @include respond(mobile) {
+    padding: 16px;
+  }
+
+  &__title {
+    @include section-title;
+  }
+
+  &__hint {
+    @include section-hint;
+  }
+
+  &__media {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    border-radius: var(--radius);
+    background-color: #000;
+
+    &--map {
+      height: 360px;
+      border: 0;
+
+      @include respond(mobile) {
+        height: 260px;
+      }
+    }
+  }
+}

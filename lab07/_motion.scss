@@ -1,0 +1,13 @@
+// Хамгийн сүүлд орно: хөдөлгөөнийг хязгаарлах
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .loader {
+    display: none;
+  }
+}

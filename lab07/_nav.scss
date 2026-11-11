@@ -1,0 +1,32 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.nav {
+  display: flex;
+  gap: 6px;
+  background-color: color-of(primary);
+  padding: 10px 40px;
+
+  @include respond(tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include respond(mobile) {
+    flex-wrap: wrap;
+    padding: 10px 16px;
+  }
+
+  &__link {
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: contrast(color-of(primary));
+    text-decoration: none;
+    transition: background-color var(--time-fast);
+
+    &:hover {
+      background-color: var(--color-dark);
+    }
+  }
+}

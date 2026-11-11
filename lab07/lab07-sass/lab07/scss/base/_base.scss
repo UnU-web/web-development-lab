@@ -1,0 +1,22 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: $font-body;
+  font-size: rem(16px);
+  line-height: 1.6;
+  transition: background-color var(--time-fast), color var(--time-fast);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}

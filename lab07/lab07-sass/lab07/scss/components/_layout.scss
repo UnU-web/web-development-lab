@@ -1,0 +1,14 @@
+@use "../abstracts/mixins" as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+
+  @include respond(mobile) {
+    padding: 24px 12px;
+  }
+}

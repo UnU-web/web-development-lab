@@ -1,0 +1,132 @@
+@use "../abstracts/tokens" as *;
+@use "../abstracts/functions" as *;
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+  transition: transform var(--time-fast) ease, box-shadow var(--time-fast) ease;
+  // Stagger: --i дарааллаар нэг нэгээр гарч ирнэ
+  animation: card-in 0.6s ease backwards;
+  animation-delay: calc(1.2s + var(--i) * var(--stagger));
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-6px);
+    box-shadow: $shadow-hover;
+  }
+
+  &:hover .card__img,
+  &:focus-within .card__img {
+    transform: scale(1.1);
+  }
+
+  // 3D flip
+  &__flip {
+    height: 240px;
+    perspective: 900px;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform var(--time-flip) ease;
+  }
+
+  &.is-flipped .card__inner {
+    transform: rotateY(180deg);
+  }
+
+  &__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &--back {
+      transform: rotateY(180deg);
+      padding: 20px;
+      background-color: var(--color-primary);
+      color: contrast(color-of(primary));
+
+      [data-theme="dark"] & {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 14px;
+    background-color: rgba(20, 33, 58, 0.8);
+    color: contrast(color-of(dark));
+    font-weight: 600;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-family: $font-heading;
+  }
+
+  &__term {
+    font-weight: 600;
+    color: var(--color-accent);
+
+    [data-theme="dark"] & {
+      color: var(--color-dark);
+      text-decoration: underline;
+    }
+  }
+
+  &__desc {
+    margin: 0 0 10px;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--time-fast), color var(--time-fast);
+
+    &:hover,
+    &[aria-pressed="true"] {
+      background-color: var(--color-primary);
+      color: var(--color-surface);
+    }
+  }
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}

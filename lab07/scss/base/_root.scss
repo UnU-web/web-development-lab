@@ -1,0 +1,22 @@
+@use "../abstracts/tokens" as *;
+
+// Token map-аас CSS custom property үүсгэнэ
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --radius: #{$radius};
+  --time-fast: #{$time-fast};
+  --time-flip: #{$time-flip};
+  --stagger: #{$stagger};
+  --shadow: #{$shadow};
+}
+
+[data-theme="dark"] {
+  @each $name, $value in $colors-dark {
+    --color-#{$name}: #{$value};
+  }
+
+  --shadow: #{$shadow-dark};
+}
